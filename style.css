@@ -20,6 +20,34 @@ p {
     margin-top: 0;
 }
 
+#controls {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+#controls button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#controls button:hover {
+    background-color: #666;
+}
+
+#octave-display {
+    font-size: 18px;
+    font-weight: bold;
+    min-width: 100px; /* Keep layout stable */
+    text-align: center;
+}
+
 #keyboard-container {
     display: flex;
     justify-content: center;
@@ -28,71 +56,75 @@ p {
     background-color: #222;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    width: auto;
+    min-width: 880px;
 }
 
 .keyboard {
     display: flex;
     position: relative;
+    height: 180px; /* Set a fixed height for the container */
 }
 
 .key {
+    width: 40px;
     border: 1px solid #000;
     border-radius: 0 0 5px 5px;
     cursor: pointer;
     box-shadow: inset 0 -5px 0 rgba(0,0,0,0.2);
     transition: all 0.07s ease;
+    position: relative; /* For positioning the span */
 }
 
 .key span {
     position: absolute;
-    bottom: 10px;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
-    color: #aaa;
-    font-size: 14px;
+    font-size: 12px;
+    pointer-events: none; /* Make text unclickable */
 }
 
 .white {
-    width: 60px;
-    height: 240px;
     background-color: #fdfdfd;
+    height: 100%; /* Full height of parent */
+    color: #333;
     z-index: 1;
 }
 
 .white.active {
     background-color: #ccc;
-    transform: translateY(2px) scale(0.98);
+    transform: translateY(2px);
     box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
 }
 
 .black {
-    width: 38px;
-    height: 140px;
     background: linear-gradient(#444, #222);
-    z-index: 2;
-    position: absolute;
-    margin-left: -19px; /* Half of its width */
-    border-bottom: none;
-}
-
-.black span {
+    height: 60%; /* Shorter than white keys */
     color: #eee;
+    z-index: 2;
+    margin-left: -20px;
+    margin-right: -20px;
 }
 
 .black.active {
     background: #333;
-    transform: translateY(2px) scale(0.98);
+    transform: translateY(2px);
     box-shadow: inset 0 -2px 0 rgba(0,0,0,0.2);
 }
 
 /* Positioning black keys */
-.black[data-note="C#4"] { left: 60px; }
-.black[data-note="D#4"] { left: 120px; }
-.black[data-note="F#4"] { left: 240px; }
-.black[data-note="G#4"] { left: 300px; }
-.black[data-note="A#4"] { left: 360px; }
-.black[data-note="C#5"] { left: 480px; }
-.black[data-note="D#5"] { left: 540px; }
+.black[data-note="C#3"] { left: 60px; }
+.black[data-note="D#3"] { left: 120px; }
+.black[data-note="F#3"] { left: 240px; }
+.black[data-note="G#3"] { left: 300px; }
+.black[data-note="A#3"] { left: 360px; }
+
+.black[data-note="C#4"] { left: 480px; }
+.black[data-note="D#4"] { left: 540px; }
+.black[data-note="F#4"] { left: 660px; }
+.black[data-note="G#4"] { left: 720px; }
+.black[data-note="A#4"] { left: 780px; }
 
 .instructions {
     margin-top: 20px;
@@ -103,4 +135,3 @@ p {
 .instructions p {
     margin: 5px 0;
 }
-

@@ -28,7 +28,6 @@ p {
     background-color: #222;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    width: 880px; /* Increased width for more keys */
 }
 
 .keyboard {
@@ -87,17 +86,13 @@ p {
 }
 
 /* Positioning black keys */
-.black[data-note="C#3"] { left: 60px; }
-.black[data-note="D#3"] { left: 120px; }
-.black[data-note="F#3"] { left: 240px; }
-.black[data-note="G#3"] { left: 300px; }
-.black[data-note="A#3"] { left: 360px; }
-
-.black[data-note="C#4"] { left: 480px; }
-.black[data-note="D#4"] { left: 540px; }
-.black[data-note="F#4"] { left: 660px; }
-.black[data-note="G#4"] { left: 720px; }
-.black[data-note="A#4"] { left: 780px; }
+.black[data-note="C#4"] { left: 60px; }
+.black[data-note="D#4"] { left: 120px; }
+.black[data-note="F#4"] { left: 240px; }
+.black[data-note="G#4"] { left: 300px; }
+.black[data-note="A#4"] { left: 360px; }
+.black[data-note="C#5"] { left: 480px; }
+.black[data-note="D#5"] { left: 540px; }
 
 .instructions {
     margin-top: 20px;
@@ -108,3 +103,4 @@ p {
 .instructions p {
     margin: 5px 0;
 }
+

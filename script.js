@@ -31,7 +31,7 @@ function playNote(note, keyElement) {
         Tone.start();
     }
     
-    synth.triggerAttack(note);
+    synth.triggerAttack(note, Tone.now());
     keyElement.classList.add('active');
     activeNotes.set(note, keyElement);
 }
@@ -96,4 +96,3 @@ document.body.addEventListener('click', () => {
         Tone.start();
     }
 }, { once: true });
-
